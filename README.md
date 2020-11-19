@@ -3,7 +3,7 @@
 This project is a simple website to add a job advertisement or to find one.
 
 ## Database :
-![Database](/resources/database.png)
+![Database](/database.png)
 
 ## Get started
 
