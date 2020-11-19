@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Job finder</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="public/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  </head>
+  <body>
+    <header>
+      <nav id="mainMenu">
+        <h1>Job Finder</h1>
+        <div class="w3-display-topright w3-container">
+          {{#user}}
+          <nav>
+            <span class="navGroup">Hello {{ name }} !</span>
+            <a href="logout">
+              <div class="navGroup">
+                <img src="public/resources/logout_icon.png" id="log" width="30" height="30">
+                <span>Logout</span>
+              </div>
+            </a>
+            <a href="profile">
+              <div class="navGroup">
+                <img src="public/resources/profile_icon.png" id="log" width="30" height="30">
+                <span>Profile</span>
+              </div>
+            </a>
+          </nav>
+          {{/user}}
+          {{^user}}
+            <nav>
+              <a href="login">
+                <div class="navGroup">
+                  <img src="public/resources/login_icon.png" id="log" width="30" height="30">
+                  <span>Login</span>
+                </div>
+              </a>
+            </nav>
+          {{/user}}
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="loader w3-display-middle"></div>
+      <section id="firstSection">
+        <h2>Welcome</h2>
+        <p>
+          Welcome to Jobboard, this is where you will find your future job !
+        </p>
+      </section>
+      <h2>Available jobs :</h2>
+      <section id="secondSection">
+        {{#ads}}
+        <article>
+          <h4>{{ title }}</h4>
+          <p>
+            {{ preview }}
+          </p>
+          <button id="{{ i }}" class="w3-button w3-blue-grey w3-small w3-round-large show">Learn more</button>
+        </article>
+        {{/ads}}
+      </section>
+    </main>
+    <div id="fullAdContainer">
+      <div id="fullAd">
+        <h3 id="full_ad_title"></h3>
+        <h4 id="full_ad_company"></h4>
+        <p id="description"></p>
+        <p id="wage"></p>
+        <p id="place"></p>
+        <p id="workingTime"></p>
+        <span class="quit">&#10006;</span>
+        <button class="w3-button w3-blue-grey w3-small w3-round-large apply">Apply</button>
+        <param name="id" value='' />
+      </div>
+    </div>
+    <div class="information">
+      <form id="applyForm">
+        {{#user}}
+          <param name="userID" value="{{ id }}">
+          <label for="fname">Name:</label>
+          <input type="text" id="fname" name="fname" value="{{ name }}"><br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="{{ email }}"><br>
+          <label for="phone">Number phone:</label>
+          <input type="tel" id="phone" name="phone" maxlength="14" pattern="\+?[0-9]{10,}" value="{{ phone }}"><br>
+          <label for="mess">Message:</label>
+          <textarea id="send" name="send" rows="4" cols="50">Your message</textarea><br/>
+          <input class="logged" type="submit" value="Submit"></input>
+          <span class="quit">&#10006;</span>
+        {{/user}}
+        {{^user}}
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname"><br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email"><br>
+          <label for="phone">Number phone:</label>
+          <input type="tel" id="phone" name="phone" maxlength="14" pattern="[0-9]{10,}"><br>
+          <label for="mess">Message:</label>
+          <textarea id="send" name="send" rows="4" cols="50">Your message</textarea><br/>
+          <input type="submit" value="Submit"></input>
+          <span class="quit">&#10006;</span>
+        {{/user}}
+      </form>
+    </div>
+    <footer>
+      <span id="pagination"></span>
+    </footer>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+    <script src="public/js/main.js"></script>
+  </body>
+</html>

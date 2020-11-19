@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body
+{
+font-family: Arial, Helvetica, sans-serif;
+background-color: #D9D9D9;
+}
+
+h1{
+  text-align: center;
+}
+form
+{
+  border-top: 3px solid grey;
+  padding-top: 5px;
+}
+
+.container {
+  padding: 16px
+}
+
+#board {
+  padding: 16px;
+  border: 3px solid gray;
+  border-radius: 10px;
+  text-align: center;
+}
+#board button {
+  width: 100%;
+}
+
+#signUp {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000b0;
+  padding-top: 50px;
+}
+
+#signUpForm {
+  background-color: #D9D9D9;
+  margin: 2% auto 2% auto;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 10px;
+}
+
+#openSignUp {
+  color: #567aeb;
+  width: 100%;
+  text-align: center;
+}
+#openSignUp:hover {
+  color: #a2b6f5;
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=password],
+input[type=tel] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 5px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+#error {
+  color: #f1f1f1;
+  background-color: #f44336;
+  display: inline-block;
+  width: 100%;
+}
+
+#board.shake {
+  animation: shake 0.5s;
+}
+
+#signUpForm.grow {
+  animation: grow 1s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  20% {
+    transform: translate(-55%, -50%);
+  }
+  40% {
+    transform: translate(-45%, -50%);
+  }
+  60% {
+    transform: translate(-55%, -50%);
+  }
+  80% {
+    transform: translate(-45%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 767px) {
+  #signUpForm {
+    width: 80%;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+  #signUpForm {
+    width: 60%;
+  }
+}

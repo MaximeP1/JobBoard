@@ -1,0 +1,84 @@
+body, .list-group-item{
+  background-color:#A3A4A4;
+  padding:6px;
+}
+
+header div {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-decoration: none;
+}
+header a:hover {
+  text-decoration: none;
+  color: black;
+}
+header div a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  color: black;
+}
+
+main a:hover, header div a:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+
+.update{
+    margin-right: 10px;
+    float: right;
+}
+#mainMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+tbody tr:hover.selected td,
+tbody tr:hover td {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: lightblue;
+}
+
+.quit {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.insert {
+  display: none;
+  top: 0;
+  padding:10px;
+  padding-top: 20px;
+  position: fixed;
+  border: 2px solid black;
+  border-width: 50%;
+  background-color: white;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 50px;
+  z-index: 20;
+}
+
+.error {
+  color: red;
+}
+.error input {
+  border-color: red;
+}

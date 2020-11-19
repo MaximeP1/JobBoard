@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>JobBoard Login</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="public/css/signIn.css" rel="stylesheet" type="text/css" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+</head>
+
+<body>
+    <header></header>
+    {{#message}}
+      <div class="shake w3-padding w3-display-middle" id="board">
+    {{/message}}
+    {{^message}}
+      <div class="w3-padding w3-display-middle" id="board">
+    {{/message}}
+      <h1>Sign In</h1>
+      <span id="error">{{ message }}</span>
+      <form action="/login/sign-in" method="post" id="signInForm">
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" name="email" required><br>
+
+        <label for="psw">Password</label>
+        <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+        <button type="submit" class="w3-button w3-blue-grey w3-small w3-round-large w3-hover-grey">Login</button>
+      </form>
+      <span id="openSignUp">New user ?</span>
+    </div>
+
+
+    <div id="signUp">
+      <span class="close" title="Close">&times;</span>
+      <form id="signUpForm" class="grow">
+        <div class="container">
+          <h1>Sign Up</h1>
+          <hr>
+
+          <label for="firstName"><b>First Name</b></label>
+          <input type="text" placeholder="First Name" name="firstName" required>
+
+          <label for="lastName"><b>Last Name</b></label>
+          <input type="text" placeholder="Last Name" name="lastName" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+
+          <label for="phone"><b>Phone</b></label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter Phone"
+            pattern="[0-9]{10,}">
+
+          <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <label for="pass-confirm"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="pass-confirm" required>
+
+          <input type="radio" id="applicant" name="applicant" value="1"
+                 checked>
+          <label for="applicant">Applicant</label>
+
+          <input type="radio" id="recruiter" name="applicant" value="0">
+          <label for="recruiter">Recruiter</label>
+
+
+          <div class="clearfix">
+            <button type="button" class="w3-button w3-red w3-round-large cancelbtn">Cancel</button>
+            <button type="submit" class="w3-button w3-blue-grey w3-round-large w3-hover-grey signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+    <script src="public/js/signIn.js"></script>
+</body>
+</html>
